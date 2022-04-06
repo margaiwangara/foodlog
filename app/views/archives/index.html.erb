@@ -1,3 +1,46 @@
-<% @entries.each do |entry| %>
-<p><%= entry.meal_type %></p>
-<% end %>
+<section class="columns mt-6 is-centered">
+  <section class="column is-half">
+    <% @entries.each do |day, entries| %>
+      <h4 class="is-size-4 has-text-weight-bold mb-4 has-text-centered">Entries for <%= day %></h4>
+
+      <section class="level is-mobile">
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Calories</p>
+            <p class="title"><%= entries.pluck(:calories).sum %></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Carbohydrates</p>
+            <p class="title"><%= entries.pluck(:carbohydrates).sum %>g</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Proteins</p>
+            <p class="title"><%= entries.pluck(:proteins).sum %>g</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <p class="heading">Fats</p>
+            <p class="title"><%= entries.pluck(:fats).sum %>g</p>
+          </div>
+        </div>
+      </section>
+      <% entries.each do |entry| %>
+        <%= link_to entry_path(entry) do %>
+          <div class="card">
+            <div class="card-content">
+              <strong class="is-block is-capitalized"><%= entry.meal_type %></strong>
+              <p class="has-text-grey is-size-6">
+                <%= entry.carbohydrates %>g, <%= entry.proteins %>g, <%= entry.fats %>g 
+              </p>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </section>
+</section>
