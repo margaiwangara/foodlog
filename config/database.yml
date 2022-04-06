@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: xnwofyaw
+  username: xnwofyaw
+  password: QQBZF87zeivhggw5XXx0jTBsVOSbQlfU
