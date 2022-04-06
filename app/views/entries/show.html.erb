@@ -1,25 +1,27 @@
 <section class="columns is-centered mt-6">
-  <div class="column is-one-quarter">
-    <div class="card">
-      <div class="card-header">
-        <h3 class="card-header-title"></h3>
+  <div class="column is-one-third">
+    <div class="panel is-link">
+      <h3 class="panel-heading"><%= @entry.meal_type %></h3>
+      <div class="panel-block">
+        Calories: <%= @entry.calories %>
       </div>
-      <div class="card-content">
-        <div class="content">
-          <p><span class="has-text-weight-bold"> calories</span></p>
-        </div>
+      <div class="panel-block">
+        Carbohydrates: <%= @entry.carbohydrates %>
       </div>
-      <div class="card-footer">
-        <%= link_to "Back", entries_path, class: "card-footer-item" %>
-        <%= link_to "Edit", edit_entry_path(@entry), class: "card-footer-item" %> |
-        <%= button_to "Delete", @entry, method: :delete, class: "card-footer-item" %>
+      <div class="panel-block">
+        Proteins: <%= @entry.proteins %>
+      </div>
+      <div class="panel-block">
+        Fats: <%= @entry.fats %>
+      </div>
+    </div>
+
+    <div class="columns is-mobile">
+      <div class="column">
+        <%= link_to "Edit", edit_entry_path(@entry), class: "button is-gray"%>
+        <%= link_to "Back", entries_path, class: "button is-primary" %>
+        <%= link_to "Delete", @entry, method: :delete, class: "button is-danger", data: { confirm: "Are you sure?" } %>
       </div>
     </div>
   </div>
 </section>
-
-<%= render @entry %>
-
-<div>
-  
-</div>
