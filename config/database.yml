@@ -25,3 +25,4 @@ production:
   database: xnwofyaw
   username: xnwofyaw
   password: QQBZF87zeivhggw5XXx0jTBsVOSbQlfU
+  host: hattie.db.elephantsql.com

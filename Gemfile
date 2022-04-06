@@ -13,6 +13,7 @@ gem "sprockets-rails"
 group :development, :test do
   gem "sqlite3", "~> 1.4"
 end
+# use pg for production
 group :production do
   gem 'pg'
 end
