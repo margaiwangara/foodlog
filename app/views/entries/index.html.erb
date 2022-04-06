@@ -1,12 +1,25 @@
-<h1>Entries</h1>
-
-<div id="entries">
+<section class="columns is-centered mt-6">
   <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
+    <div class="column is-one-quarter">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-header-title is-capitalized"><%= entry.meal_type %></h3>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <p><span class="has-text-weight-bold"> <%= entry.calories %></span> calories</p>
+            <p><span class="has-text-weight-bold"> <%= entry.carbohydrates %></span> grams of carbohydrates</p>
+            <p><span class="has-text-weight-bold"> <%= entry.proteins %></span> grams of proteins</p>
+            <p><span class="has-text-weight-bold"> <%= entry.fats %></span> grams of fats</p>
+            <p><span class="italic">Logged <%= time_ago_in_words(entry.created_at) %> ago</span></p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <%= link_to "Show", entry, class: "card-footer-item" %>
+          <%= link_to "Edit", edit_entry_path(entry), class: "card-footer-item" %>
+          <%= button_to "Delete", @entry, method: :delete, class: "button is-link is-inverted card-footer-item" %>
+        </div>
+      </div>
+    </div>
   <% end %>
-</div>
-
-<%= link_to "New entry", new_entry_path %>
+</section>

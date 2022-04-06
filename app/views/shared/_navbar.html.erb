@@ -1,11 +1,11 @@
 <nav class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    <%= link_to root_path, class: "navbar-item" do %>
       <span class="is-size-5 has-text-weight-bold has-text-primary">
         FoodLog
       </span>
-    </a>
-
+    <% end %>
+    
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>

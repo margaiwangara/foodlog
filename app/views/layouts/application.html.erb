@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Foodlog</title>
+    <title>Foodlog | <% if content_for(:title) %> <%= yield :title %> <% else %> Log your food and stay healthy <% end %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

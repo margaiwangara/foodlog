@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<section class="columns is-centered mt-6">
+  <div class="column is-one-quarter">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-header-title"></h3>
+      </div>
+      <div class="card-content">
+        <div class="content">
+          <p><span class="has-text-weight-bold"> calories</span></p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <%= link_to "Back", entries_path, class: "card-footer-item" %>
+        <%= link_to "Edit", edit_entry_path(@entry), class: "card-footer-item" %> |
+        <%= button_to "Delete", @entry, method: :delete, class: "card-footer-item" %>
+      </div>
+    </div>
+  </div>
+</section>
 
 <%= render @entry %>
 
 <div>
-  <%= link_to "Edit this entry", edit_entry_path(@entry) %> |
-  <%= link_to "Back to entries", entries_path %>
-
-  <%= button_to "Destroy this entry", @entry, method: :delete %>
+  
 </div>
